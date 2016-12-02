@@ -38,6 +38,7 @@ end
 
 group :test do
   gem 'rspec-rails', '3.5.0'
+  gem 'cranky'
   gem 'database_cleaner'
   gem 'connection_pool'
   gem 'json-schema'
