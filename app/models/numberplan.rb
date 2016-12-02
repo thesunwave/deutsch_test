@@ -9,7 +9,7 @@ class Numberplan < ApplicationRecord
                   ],
                   using: {
                       tsearch: { any_word: true },
-                      trigram: { }
+                      trigram: { threshold: 0.33 }
                   },
                   ignoring: :accents
 end
