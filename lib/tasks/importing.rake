@@ -6,11 +6,11 @@ namespace :importing do
     file = args[:filename]
     CSV.foreach(file, headers: false) do |row|
       Numberplan.create!(
-          prefix: row[1],
-          max_length: row[2],
-          min_length: row[3],
-          usage: row[4],
-          comment: row[5]
+          prefix: row[0],
+          max_length: row[1],
+          min_length: row[2],
+          usage: row[3],
+          comment: row[4]
       )
     end
 
