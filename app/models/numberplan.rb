@@ -1,0 +1,2 @@
+class Numberplan < ApplicationRecord
+end
