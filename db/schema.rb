@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 20161201124529) do
   create_table "numberplans", force: :cascade do |t|
     t.integer  "prefix"
     t.integer  "max_length"
-    t.string   "min_length"
-    t.string   "integer"
-    t.text     "usage"
+    t.integer  "min_length"
+    t.string   "usage"
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

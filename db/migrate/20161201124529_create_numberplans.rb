@@ -3,9 +3,8 @@ class CreateNumberplans < ActiveRecord::Migration[5.0]
     create_table :numberplans do |t|
       t.integer :prefix
       t.integer :max_length
-      t.string :min_length
-      t.string :integer
-      t.text :usage
+      t.integer :min_length
+      t.string :usage
       t.text :comment
 
       t.timestamps
