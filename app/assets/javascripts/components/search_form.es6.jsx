@@ -6,10 +6,6 @@ class SearchForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-
     handleSubmit(event) {
         alert('A name was submitted: ' + this.input.value);
         event.preventDefault();
@@ -20,7 +16,7 @@ class SearchForm extends React.Component {
             <div className="col-xs-12">
                 <div className="form-group">
                     <form onSubmit={this.handleSubmit}>
-                        <label for="search">
+                        <label htmlFor="search">
                             Find:
                         </label>
                         <input className="form-control" type="text" name="search" ref={(input) => this.input = input} />
