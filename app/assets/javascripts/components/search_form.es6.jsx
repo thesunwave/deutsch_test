@@ -2,7 +2,7 @@ class SearchForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {result: {}};
+        this.state = {result: {}, buttonDisabled: false};
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -10,12 +10,13 @@ class SearchForm extends React.Component {
         event.preventDefault();
 
         if (this.input.value) {
+            this.setState({ buttonDisabled: true });
             $.ajax(
                 {
                     url: '/search',
                     type: 'GET',
                     data: {query: this.input.value},
-                    success: (response) => this.setState({result: response })
+                    success: (response) => this.setState({result: response, buttonDisabled: false})
                 }
             )
         }
@@ -30,7 +31,7 @@ class SearchForm extends React.Component {
                             Find:
                         </label>
                         <input className="form-control" type="text" name="search" ref={(input) => this.input = input}/>
-                        <input className="btn btn-default" type="submit" value="Submit"/>
+                        <input className="btn btn-default" type="submit" disabled={this.state.buttonDisabled} value="Submit"/>
                     </form>
                 </div>
                 <Results data={this.state.result}/>
