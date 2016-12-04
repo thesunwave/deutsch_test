@@ -87,6 +87,9 @@ GEM
     json_spec (1.1.4)
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -182,6 +185,11 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scopie (1.1.2)
+    scopie_rails (1.1.1)
+      actionpack (>= 3.2, < 5.1)
+      activesupport (>= 3.2, < 5.1)
+      scopie (~> 1)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -233,6 +241,7 @@ DEPENDENCIES
   jquery-rails
   json-schema
   json_spec
+  kaminari
   listen (~> 3.0.5)
   pg (~> 0.18)
   pg_search
@@ -242,6 +251,7 @@ DEPENDENCIES
   react-rails
   rspec-rails (= 3.5.0)
   sass-rails (~> 5.0)
+  scopie_rails
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-es6
