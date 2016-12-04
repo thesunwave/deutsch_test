@@ -3,7 +3,6 @@ class App extends React.Component {
         return (
             <div className="row">
                 <SearchForm />
-                <Results />
             </div>
         );
     }
