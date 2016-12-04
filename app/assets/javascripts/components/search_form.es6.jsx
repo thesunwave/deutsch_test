@@ -9,7 +9,7 @@ class SearchForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        if (this.input.value) {
+        if (this.input.value.trim()) {
             this.setState({ buttonDisabled: true });
             $.ajax(
                 {
