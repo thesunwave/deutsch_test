@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -16,6 +17,8 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'pg_search'
+
 # Use react as the JavaScript library
 gem 'react-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,8 +34,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'byebug', require: false
+end
+
+group :test do
+  gem 'rspec-rails', '3.5.0'
+  gem 'cranky'
+  gem 'database_cleaner'
+  gem 'connection_pool'
+  gem 'json-schema'
+  gem 'json_spec'
+  gem 'approvals', '~> 0.0.20'
 end
 
 group :development do
