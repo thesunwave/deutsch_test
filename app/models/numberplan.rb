@@ -8,8 +8,9 @@ class Numberplan < ApplicationRecord
                       [:comment, 'B']
                   ],
                   using: {
-                      tsearch: { any_word: true },
+                      tsearch: { any_word: true, prefix: true },
                       trigram: { threshold: 0.1, only: [:usage, :comment, :prefix] }
                   },
+                  ranked_by: ':tsearch',
                   ignoring: :accents
 end
