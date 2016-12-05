@@ -5,7 +5,8 @@ class MainPageController < ApplicationController
   end
 
   def search
-    @records = apply_scopes(Numberplan.search(params[:query]))
+    query = PhoneNormalizerService.new.call(params[:query])
+    @records = apply_scopes(Numberplan.search(query))
     render json: {
         data: @records,
         currentPage: @records.current_page,
