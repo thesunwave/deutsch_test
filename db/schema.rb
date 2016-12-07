@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202162828) do
+ActiveRecord::Schema.define(version: 20161207112935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161202162828) do
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["prefix"], name: "index_numberplans_on_prefix", using: :btree
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
